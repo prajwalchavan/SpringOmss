@@ -9,6 +9,6 @@ public interface ProductService {
 	List<Product> getAllProducts();
 
 	String saveOrUpdate(Product product);
-
-
+	
+	Product updateProduct(Product product);
 }

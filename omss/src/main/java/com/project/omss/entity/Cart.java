@@ -1,8 +1,12 @@
 package com.project.omss.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +24,12 @@ public class Cart {
 	private int quantity;
 	@Column(name = "Total_Amount")
 	private double totalAmount;
+	
+	@ManyToMany(mappedBy="carts" )
+	private List<Product> Products = new ArrayList<>();
+	
+	
+	
 	public Cart() {
 		super();
 	}
@@ -60,6 +70,13 @@ public class Cart {
 	}
 	public void setTotalAmount(double totalAmount) {
 		this.totalAmount = totalAmount;
+	}
+	
+	public List<Product> getProducts() {
+		return Products;
+	}
+	public void setProducts(List<Product> products) {
+		Products = products;
 	}
 	@Override
 	public String toString() {

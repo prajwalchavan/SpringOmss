@@ -10,21 +10,21 @@ import com.project.omss.entity.Product;
 import com.project.omss.repository.ProductJpaRepository;
 
 @Service
-public class ProductServiceImpl implements ProductService{
-	
+public class ProductServiceImpl implements ProductService {
+
 	@Autowired
- 	ProductJpaRepository productRepository;
-	 
+	ProductJpaRepository productRepository;
+
 	@Override
 	public String saveOrUpdate(Product product) {
 		productRepository.save(product);
 		return "Product Added";
 	}
-	
+
 	@Override
 	public List<Product> getAllProducts() {
 		List<Product> product = new ArrayList<Product>();
-       	productRepository.findAll().forEach(p1 -> product.add(p1));
+		productRepository.findAll().forEach(p1 -> product.add(p1));
 		return product;
 	}
 
@@ -34,6 +34,11 @@ public class ProductServiceImpl implements ProductService{
 
 	public List<Product> getProductByCategory(String category) {
 		return productRepository.findByCategory(category);
+	}
+
+	public Product updateProduct(Product product) {
+		Product p = productRepository.save(product);
+		return p;
 	}
 
 }

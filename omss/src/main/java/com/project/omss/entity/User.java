@@ -20,13 +20,13 @@ public class User {
     @Column(name="mailId")
     private String mailId;
     @Column(name="mobileNo")
-    private Long mobileNo;
+    private String mobileNo;
     @Column(name="address")
 	private String address;
 	public User() {
 		super();
 	}
-	public User(int userId, String firstName, String lastName, String password, String mailId, Long mobileNo,
+	public User(int userId, String firstName, String lastName, String password, String mailId, String mobileNo,
 			String address) {
 		super();
 		this.userId = userId;
@@ -67,10 +67,10 @@ public class User {
 	public void setMailId(String mailId) {
 		this.mailId = mailId;
 	}
-	public Long getMobileNo() {
+	public String getMobileNo() {
 		return mobileNo;
 	}
-	public void setMobileNo(Long mobileNo) {
+	public void setMobileNo(String mobileNo) {
 		this.mobileNo = mobileNo;
 	}
 	public String getAddress() {

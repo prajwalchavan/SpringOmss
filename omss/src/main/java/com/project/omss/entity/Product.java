@@ -1,8 +1,14 @@
 package com.project.omss.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +25,13 @@ public class Product {
 	private int quantity;
 	@Column(name="price")
 	private double price;
+	
+	@ManyToMany
+	@JoinTable(name="products_in_cart",joinColumns=@JoinColumn(name="productId"),inverseJoinColumns=@JoinColumn(name="cartId")) 
+	private List<Cart> carts = new ArrayList<>();
+	
+	
+	
 	public Product() {
 		super();
 	}
@@ -59,6 +72,13 @@ public class Product {
 	}
 	public void setPrice(double price) {
 		this.price = price;
+	}
+	
+	public List<Cart> getCarts() {
+		return carts;
+	}
+	public void setCarts(List<Cart> carts) {
+		this.carts = carts;
 	}
 	@Override
 	public String toString() {

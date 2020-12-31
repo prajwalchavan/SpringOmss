@@ -1,0 +1,199 @@
+2020-12-30 16:42:15 INFO  c.p.o.OmssApplication:55 - Starting OmssApplication using Java 15 on DESKTOP-1ML8FR5 with PID 15812 (C:\Users\Prajwal\git\SpringOmss\omss\target\classes started by Prajwal in C:\Users\Prajwal\git\SpringOmss\omss)
+2020-12-30 16:42:15 DEBUG c.p.o.OmssApplication:56 - Running with Spring Boot v2.4.1, Spring v5.3.2
+2020-12-30 16:42:15 INFO  c.p.o.OmssApplication:660 - No active profile set, falling back to default profiles: default
+2020-12-30 16:42:15 INFO  o.s.d.r.c.RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-30 16:42:16 INFO  o.s.d.r.c.RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 74 ms. Found 4 JPA repository interfaces.
+2020-12-30 16:42:16 INFO  o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2020-12-30 16:42:16 INFO  o.a.c.c.StandardService:173 - Starting service [Tomcat]
+2020-12-30 16:42:16 INFO  o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2020-12-30 16:42:17 INFO  o.a.c.c.C.[.[.[/]:173 - Initializing Spring embedded WebApplicationContext
+2020-12-30 16:42:17 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 1841 ms
+2020-12-30 16:42:17 INFO  o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-30 16:42:17 INFO  o.h.Version:44 - HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-30 16:42:17 INFO  o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-30 16:42:17 INFO  c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
+2020-12-30 16:42:18 INFO  c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
+2020-12-30 16:42:18 INFO  o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-12-30 16:42:19 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-30 16:42:19 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-30 16:42:20 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-30 16:42:20 INFO  o.s.s.c.ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-30 16:42:20 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:596 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2020-12-30 16:42:20 INFO  o.s.s.c.ThreadPoolTaskExecutor:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-30 16:42:20 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-30 16:42:20 INFO  c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2020-12-30 16:42:20 INFO  c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2020-12-30 16:42:20 INFO  o.a.c.c.StandardService:173 - Stopping service [Tomcat]
+2020-12-30 16:42:20 INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-12-30 16:42:20 ERROR o.s.b.d.LoggingFailureAnalysisReporter:40 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2020-12-30 16:42:32 INFO  c.p.o.OmssApplication:55 - Starting OmssApplication using Java 15 on DESKTOP-1ML8FR5 with PID 13756 (C:\Users\Prajwal\git\SpringOmss\omss\target\classes started by Prajwal in C:\Users\Prajwal\git\SpringOmss\omss)
+2020-12-30 16:42:32 DEBUG c.p.o.OmssApplication:56 - Running with Spring Boot v2.4.1, Spring v5.3.2
+2020-12-30 16:42:32 INFO  c.p.o.OmssApplication:660 - No active profile set, falling back to default profiles: default
+2020-12-30 16:42:33 INFO  o.s.d.r.c.RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-30 16:42:33 INFO  o.s.d.r.c.RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 75 ms. Found 4 JPA repository interfaces.
+2020-12-30 16:42:34 INFO  o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2020-12-30 16:42:34 INFO  o.a.c.c.StandardService:173 - Starting service [Tomcat]
+2020-12-30 16:42:34 INFO  o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2020-12-30 16:42:34 INFO  o.a.c.c.C.[.[.[/]:173 - Initializing Spring embedded WebApplicationContext
+2020-12-30 16:42:34 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 1921 ms
+2020-12-30 16:42:34 INFO  o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-30 16:42:34 INFO  o.h.Version:44 - HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-30 16:42:35 INFO  o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-30 16:42:35 INFO  c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
+2020-12-30 16:42:35 INFO  c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
+2020-12-30 16:42:35 INFO  o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-12-30 16:42:37 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-30 16:42:37 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-30 16:42:37 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-30 16:42:37 INFO  o.s.s.c.ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-30 16:42:38 INFO  o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-30 16:42:38 INFO  c.p.o.OmssApplication:61 - Started OmssApplication in 6.269 seconds (JVM running for 7.532)
+2020-12-30 16:43:08 INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin:159 - Application shutdown requested.
+2020-12-30 16:43:08 INFO  o.s.s.c.ThreadPoolTaskExecutor:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-30 16:43:08 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-30 16:43:08 INFO  c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2020-12-30 16:43:08 INFO  c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2020-12-30 16:43:14 INFO  c.p.o.OmssApplication:55 - Starting OmssApplication using Java 15 on DESKTOP-1ML8FR5 with PID 12696 (C:\Users\Prajwal\git\SpringOmss\omss\target\classes started by Prajwal in C:\Users\Prajwal\git\SpringOmss\omss)
+2020-12-30 16:43:15 DEBUG c.p.o.OmssApplication:56 - Running with Spring Boot v2.4.1, Spring v5.3.2
+2020-12-30 16:43:15 INFO  c.p.o.OmssApplication:660 - No active profile set, falling back to default profiles: default
+2020-12-30 16:43:16 INFO  o.s.d.r.c.RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-30 16:43:16 INFO  o.s.d.r.c.RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 130 ms. Found 4 JPA repository interfaces.
+2020-12-30 16:43:18 INFO  o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2020-12-30 16:43:18 INFO  o.a.c.c.StandardService:173 - Starting service [Tomcat]
+2020-12-30 16:43:18 INFO  o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2020-12-30 16:43:18 INFO  c.p.o.OmssApplication:55 - Starting OmssApplication using Java 15 on DESKTOP-1ML8FR5 with PID 19452 (C:\Users\Prajwal\git\SpringOmss\omss\target\classes started by Prajwal in C:\Users\Prajwal\git\SpringOmss\omss)
+2020-12-30 16:43:18 DEBUG c.p.o.OmssApplication:56 - Running with Spring Boot v2.4.1, Spring v5.3.2
+2020-12-30 16:43:18 INFO  c.p.o.OmssApplication:660 - No active profile set, falling back to default profiles: default
+2020-12-30 16:43:18 INFO  o.a.c.c.C.[.[.[/]:173 - Initializing Spring embedded WebApplicationContext
+2020-12-30 16:43:18 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 3474 ms
+2020-12-30 16:43:19 INFO  o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-30 16:43:19 INFO  o.h.Version:44 - HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-30 16:43:19 INFO  o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-30 16:43:19 INFO  o.s.d.r.c.RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-30 16:43:19 INFO  o.s.d.r.c.RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 101 ms. Found 4 JPA repository interfaces.
+2020-12-30 16:43:19 INFO  c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
+2020-12-30 16:43:20 INFO  c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
+2020-12-30 16:43:20 INFO  o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-12-30 16:43:21 INFO  o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2020-12-30 16:43:21 INFO  o.a.c.c.StandardService:173 - Starting service [Tomcat]
+2020-12-30 16:43:21 INFO  o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2020-12-30 16:43:21 INFO  o.a.c.c.C.[.[.[/]:173 - Initializing Spring embedded WebApplicationContext
+2020-12-30 16:43:21 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 3315 ms
+2020-12-30 16:43:22 INFO  o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-30 16:43:22 INFO  o.h.Version:44 - HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-30 16:43:22 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-30 16:43:22 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-30 16:43:22 INFO  o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-30 16:43:23 INFO  c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
+2020-12-30 16:43:23 INFO  c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
+2020-12-30 16:43:23 INFO  o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-12-30 16:43:23 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-30 16:43:23 INFO  o.s.s.c.ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-30 16:43:24 INFO  o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-30 16:43:24 INFO  c.p.o.OmssApplication:61 - Started OmssApplication in 10.538 seconds (JVM running for 12.145)
+2020-12-30 16:43:25 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-30 16:43:25 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-30 16:43:25 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-30 16:43:26 INFO  o.s.s.c.ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-30 16:43:26 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:596 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2020-12-30 16:43:26 INFO  o.s.s.c.ThreadPoolTaskExecutor:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-30 16:43:26 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-30 16:43:26 INFO  c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2020-12-30 16:43:26 INFO  c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2020-12-30 16:43:26 INFO  o.a.c.c.StandardService:173 - Stopping service [Tomcat]
+2020-12-30 16:43:26 INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-12-30 16:43:26 ERROR o.s.b.d.LoggingFailureAnalysisReporter:40 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2020-12-30 16:43:31 INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin:159 - Application shutdown requested.
+2020-12-30 16:43:31 INFO  o.s.s.c.ThreadPoolTaskExecutor:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-30 16:43:31 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-30 16:43:31 INFO  c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2020-12-30 16:43:31 INFO  c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2020-12-30 16:43:44 INFO  c.p.o.OmssApplication:55 - Starting OmssApplication using Java 15 on DESKTOP-1ML8FR5 with PID 3720 (C:\Users\Prajwal\git\SpringOmss\omss\target\classes started by Prajwal in C:\Users\Prajwal\git\SpringOmss\omss)
+2020-12-30 16:43:44 DEBUG c.p.o.OmssApplication:56 - Running with Spring Boot v2.4.1, Spring v5.3.2
+2020-12-30 16:43:44 INFO  c.p.o.OmssApplication:660 - No active profile set, falling back to default profiles: default
+2020-12-30 16:43:45 INFO  o.s.d.r.c.RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-30 16:43:45 INFO  o.s.d.r.c.RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 67 ms. Found 4 JPA repository interfaces.
+2020-12-30 16:43:46 INFO  o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2020-12-30 16:43:46 INFO  o.a.c.c.StandardService:173 - Starting service [Tomcat]
+2020-12-30 16:43:46 INFO  o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2020-12-30 16:43:46 INFO  o.a.c.c.C.[.[.[/]:173 - Initializing Spring embedded WebApplicationContext
+2020-12-30 16:43:46 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 1839 ms
+2020-12-30 16:43:46 INFO  o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-30 16:43:46 INFO  o.h.Version:44 - HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-30 16:43:47 INFO  o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-30 16:43:47 INFO  c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
+2020-12-30 16:43:47 INFO  c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
+2020-12-30 16:43:47 INFO  o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-12-30 16:43:48 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-30 16:43:48 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-30 16:43:49 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-30 16:43:49 INFO  o.s.s.c.ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-30 16:43:50 INFO  o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-30 16:43:50 INFO  c.p.o.OmssApplication:61 - Started OmssApplication in 6.08 seconds (JVM running for 7.397)
+2020-12-30 16:44:16 INFO  o.a.c.c.C.[.[.[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-30 16:44:16 INFO  o.s.w.s.DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2020-12-30 16:44:16 INFO  o.s.w.s.DispatcherServlet:547 - Completed initialization in 2 ms
+2020-12-30 16:44:16 INFO  c.p.o.c.UserController:32 - Users Retrived
+2020-12-30 16:46:29 INFO  c.p.o.c.UserController:32 - Users Retrived
+2020-12-30 17:12:17 INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin:159 - Application shutdown requested.
+2020-12-30 17:12:17 INFO  o.s.s.c.ThreadPoolTaskExecutor:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-30 17:12:17 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-30 17:12:17 INFO  c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2020-12-30 17:12:17 INFO  c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2020-12-30 17:26:53 INFO  c.p.o.OmssApplication:55 - Starting OmssApplication using Java 15 on DESKTOP-1ML8FR5 with PID 3000 (C:\Users\Prajwal\git\SpringOmss\omss\target\classes started by Prajwal in C:\Users\Prajwal\git\SpringOmss\omss)
+2020-12-30 17:26:53 DEBUG c.p.o.OmssApplication:56 - Running with Spring Boot v2.4.1, Spring v5.3.2
+2020-12-30 17:26:53 INFO  c.p.o.OmssApplication:660 - No active profile set, falling back to default profiles: default
+2020-12-30 17:26:54 INFO  o.s.d.r.c.RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-30 17:26:54 INFO  o.s.d.r.c.RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 69 ms. Found 4 JPA repository interfaces.
+2020-12-30 17:26:55 INFO  o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2020-12-30 17:26:55 INFO  o.a.c.c.StandardService:173 - Starting service [Tomcat]
+2020-12-30 17:26:55 INFO  o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2020-12-30 17:26:55 INFO  o.a.c.c.C.[.[.[/]:173 - Initializing Spring embedded WebApplicationContext
+2020-12-30 17:26:55 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 1841 ms
+2020-12-30 17:26:55 INFO  o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-30 17:26:55 INFO  o.h.Version:44 - HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-30 17:26:56 INFO  o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-30 17:26:56 INFO  c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
+2020-12-30 17:26:56 INFO  c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
+2020-12-30 17:26:56 INFO  o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-12-30 17:26:58 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-30 17:26:58 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-30 17:26:59 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-30 17:26:59 INFO  o.s.s.c.ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-30 17:26:59 INFO  o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-30 17:26:59 INFO  c.p.o.OmssApplication:61 - Started OmssApplication in 6.785 seconds (JVM running for 8.19)
+2020-12-30 17:55:54 INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin:159 - Application shutdown requested.
+2020-12-30 17:55:54 INFO  o.s.s.c.ThreadPoolTaskExecutor:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-30 17:55:54 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-30 17:55:54 INFO  c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2020-12-30 17:55:54 INFO  c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.

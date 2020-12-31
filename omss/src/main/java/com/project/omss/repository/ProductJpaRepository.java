@@ -12,4 +12,5 @@ public interface ProductJpaRepository extends CrudRepository<Product, Integer> {
 
 	List<Product> findByCategory(String category);
 
+
 }
