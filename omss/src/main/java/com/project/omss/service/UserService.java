@@ -7,4 +7,6 @@ public interface UserService {
 
 	String saveOrUpdate(User user);
 	List<User> getAllUsers();
+	User loginUser(int userId, String password);
+	User findOneById(int userId);
 }

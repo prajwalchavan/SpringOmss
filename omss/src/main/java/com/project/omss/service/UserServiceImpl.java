@@ -13,7 +13,7 @@ import com.project.omss.repository.UserJpaRepository;
 public class UserServiceImpl implements UserService{
 	@Autowired
  	UserJpaRepository userRepository;
-
+	
 	@Override
 	public String saveOrUpdate(User user) {
 		userRepository.save(user);
@@ -25,5 +25,15 @@ public class UserServiceImpl implements UserService{
 		List<User> user = new ArrayList<User>();
        	userRepository.findAll().forEach(u1 -> user.add(u1));
        	return user;
+	}
+
+	@Override
+	public User loginUser(int userId, String password) {
+		return userRepository.loginUser(userId, password);
+	}
+
+	@Override
+	public User findOneById(int userId) {
+		return userRepository.findByUserId(userId);
 	}
 }
