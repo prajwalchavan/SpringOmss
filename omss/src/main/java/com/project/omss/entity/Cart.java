@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
@@ -14,10 +16,11 @@ import javax.persistence.Table;
 @Table(name = "CartDetails")
 public class Cart {
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "cart_id")
 	private int cartId;
 	@Column(name = "user_id")
-	private int userid;
+	private int userId;
 	@Column(name= "product_id")
 	private int productId;
 	@Column(name = "Quantity")
@@ -25,21 +28,20 @@ public class Cart {
 	@Column(name = "Total_Amount")
 	private double totalAmount;
 	
-	@ManyToMany(mappedBy="carts" )
-	private List<Product> Products = new ArrayList<>();
+//	@ManyToMany(mappedBy="carts" )
+//	private List<Product> Products = new ArrayList<>();
 	
 	
 	
 	public Cart() {
 		super();
 	}
-	public Cart(int cartId, int userid, int productId, int quantity, double totalAmount) {
+	public Cart( int userid, int productId, int quantity, double totalAmount) {
 		super();
-		this.cartId = cartId;
-		this.userid = userid;
+		this.userId = userid;
 		this.productId = productId;
 		this.quantity = quantity;
-		this.totalAmount = totalAmount;
+		this.totalAmount = totalAmount ;
 	}
 	public int getCartId() {
 		return cartId;
@@ -48,10 +50,10 @@ public class Cart {
 		this.cartId = cartId;
 	}
 	public int getUserid() {
-		return userid;
+		return userId;
 	}
 	public void setUserid(int userid) {
-		this.userid = userid;
+		this.userId = userid;
 	}
 	public int getProductId() {
 		return productId;
@@ -72,15 +74,15 @@ public class Cart {
 		this.totalAmount = totalAmount;
 	}
 	
-	public List<Product> getProducts() {
-		return Products;
-	}
-	public void setProducts(List<Product> products) {
-		Products = products;
-	}
+//	public List<Product> getProducts() {
+//		return Products;
+//	}
+//	public void setProducts(List<Product> products) {
+//		Products = products;
+//	}
 	@Override
 	public String toString() {
-		return "Cart [cartId=" + cartId + ", userid=" + userid + ", productId=" + productId + ", quantity=" + quantity
+		return "Cart [cartId=" + cartId + ", userid=" + userId + ", productId=" + productId + ", quantity=" + quantity
 				+ ", totalAmount=" + totalAmount + "]";
 	}
 	

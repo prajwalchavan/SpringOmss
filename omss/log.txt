@@ -665,3 +665,66 @@ Caused by: org.springframework.data.mapping.PropertyReferenceException: No prope
 2020-12-31 11:08:08 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
 2020-12-31 11:08:08 INFO  c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
 2020-12-31 11:08:08 INFO  c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2020-12-31 11:12:28 INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin:159 - Application shutdown requested.
+2020-12-31 11:12:28 INFO  o.s.s.c.ThreadPoolTaskExecutor:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-31 11:12:28 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-31 11:12:28 INFO  c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2020-12-31 11:12:28 INFO  c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2020-12-31 11:49:15 INFO  c.p.o.OmssApplication:55 - Starting OmssApplication using Java 15 on DESKTOP-1ML8FR5 with PID 20708 (C:\Users\Prajwal\git\SpringOmss\omss\target\classes started by Prajwal in C:\Users\Prajwal\git\SpringOmss\omss)
+2020-12-31 11:49:15 DEBUG c.p.o.OmssApplication:56 - Running with Spring Boot v2.4.1, Spring v5.3.2
+2020-12-31 11:49:15 INFO  c.p.o.OmssApplication:660 - No active profile set, falling back to default profiles: default
+2020-12-31 11:49:16 INFO  o.s.d.r.c.RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-31 11:49:16 INFO  o.s.d.r.c.RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 91 ms. Found 4 JPA repository interfaces.
+2020-12-31 11:49:18 INFO  o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2020-12-31 11:49:18 INFO  o.a.c.c.StandardService:173 - Starting service [Tomcat]
+2020-12-31 11:49:18 INFO  o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2020-12-31 11:49:18 INFO  o.a.c.c.C.[.[.[/]:173 - Initializing Spring embedded WebApplicationContext
+2020-12-31 11:49:18 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 3049 ms
+2020-12-31 11:49:18 INFO  o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-31 11:49:18 INFO  o.h.Version:44 - HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-31 11:49:19 INFO  o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-31 11:49:19 INFO  c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
+2020-12-31 11:49:19 INFO  c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
+2020-12-31 11:49:19 INFO  o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-12-31 11:49:21 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-31 11:49:21 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-31 11:49:22 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-31 11:49:23 INFO  o.s.s.c.ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-31 11:49:23 INFO  o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-31 11:49:23 INFO  c.p.o.OmssApplication:61 - Started OmssApplication in 9.431 seconds (JVM running for 10.862)
+2020-12-31 11:51:37 INFO  o.a.c.c.C.[.[.[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-31 11:51:37 INFO  o.s.w.s.DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2020-12-31 11:51:37 INFO  o.s.w.s.DispatcherServlet:547 - Completed initialization in 2 ms
+2020-12-31 11:51:38 WARN  o.h.e.j.s.SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23502
+2020-12-31 11:51:38 ERROR o.h.e.j.s.SqlExceptionHelper:142 - ERROR: null value in column "cart_id" of relation "cart_details" violates not-null constraint
+  Detail: Failing row contains (null, 5, 100, 1, 10).
+2020-12-31 11:54:49 INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin:159 - Application shutdown requested.
+2020-12-31 11:54:49 INFO  o.s.s.c.ThreadPoolTaskExecutor:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-31 11:54:49 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-31 11:54:49 INFO  c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2020-12-31 11:54:49 INFO  c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2020-12-31 11:54:57 INFO  c.p.o.OmssApplication:55 - Starting OmssApplication using Java 15 on DESKTOP-1ML8FR5 with PID 15024 (C:\Users\Prajwal\git\SpringOmss\omss\target\classes started by Prajwal in C:\Users\Prajwal\git\SpringOmss\omss)
+2020-12-31 11:54:57 DEBUG c.p.o.OmssApplication:56 - Running with Spring Boot v2.4.1, Spring v5.3.2
+2020-12-31 11:54:57 INFO  c.p.o.OmssApplication:660 - No active profile set, falling back to default profiles: default
+2020-12-31 11:54:58 INFO  o.s.d.r.c.RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-31 11:54:58 INFO  o.s.d.r.c.RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 96 ms. Found 4 JPA repository interfaces.
+2020-12-31 11:54:59 INFO  o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2020-12-31 11:54:59 INFO  o.a.c.c.StandardService:173 - Starting service [Tomcat]
+2020-12-31 11:54:59 INFO  o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2020-12-31 11:54:59 INFO  o.a.c.c.C.[.[.[/]:173 - Initializing Spring embedded WebApplicationContext
+2020-12-31 11:54:59 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 2150 ms
+2020-12-31 11:54:59 INFO  o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-31 11:54:59 INFO  o.h.Version:44 - HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-31 11:55:00 INFO  o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-31 11:55:00 INFO  c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
+2020-12-31 11:55:00 INFO  c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
+2020-12-31 11:55:00 INFO  o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-12-31 11:55:02 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-31 11:55:02 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-31 11:55:03 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-31 11:55:03 INFO  o.s.s.c.ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-31 11:55:04 INFO  o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-31 11:55:04 INFO  c.p.o.OmssApplication:61 - Started OmssApplication in 7.56 seconds (JVM running for 9.22)
+2020-12-31 11:55:40 INFO  o.a.c.c.C.[.[.[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-31 11:55:40 INFO  o.s.w.s.DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2020-12-31 11:55:40 INFO  o.s.w.s.DispatcherServlet:547 - Completed initialization in 2 ms

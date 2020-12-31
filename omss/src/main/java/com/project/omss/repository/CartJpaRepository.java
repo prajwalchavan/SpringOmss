@@ -1,8 +1,13 @@
 package com.project.omss.repository;
 
-import org.springframework.data.repository.CrudRepository;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
 import com.project.omss.entity.Cart;
 
-public interface CartJpaRepository extends CrudRepository<Cart,Integer>{
+public interface CartJpaRepository extends JpaRepository<Cart,Integer>{
+	List<Cart> findByUserId(int userId);
 
+	Cart findByProductId(int productId);
 }

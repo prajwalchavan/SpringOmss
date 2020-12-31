@@ -26,9 +26,9 @@ public class Product {
 	@Column(name="price")
 	private double price;
 	
-	@ManyToMany
-	@JoinTable(name="products_in_cart",joinColumns=@JoinColumn(name="productId"),inverseJoinColumns=@JoinColumn(name="cartId")) 
-	private List<Cart> carts = new ArrayList<>();
+//	@ManyToMany
+//	@JoinTable(name="products_in_cart",joinColumns=@JoinColumn(name="productId"),inverseJoinColumns=@JoinColumn(name="cartId")) 
+//	private List<Cart> carts = new ArrayList<>();
 	
 	
 	
@@ -74,12 +74,12 @@ public class Product {
 		this.price = price;
 	}
 	
-	public List<Cart> getCarts() {
-		return carts;
-	}
-	public void setCarts(List<Cart> carts) {
-		this.carts = carts;
-	}
+//	public List<Cart> getCarts() {
+//		return carts;
+//	}
+//	public void setCarts(List<Cart> carts) {
+//		this.carts = carts;
+//	}
 	@Override
 	public String toString() {
 		return "Product [productId=" + productId + ", productName=" + productName + ", category=" + category
