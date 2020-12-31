@@ -18,11 +18,7 @@ public class CartServiceImpl implements CartService{
 	
 	@Autowired
 	ProductJpaRepository productRepository;
-	public String saveOrUpdate(Cart cart) {
-		cartRepository.save(cart);
-		return "Product Added To Cart";
-	}
-
+	
 	@Override
 	public Cart addToCart(int userid, int productId, int quantity) {
 		List<Cart> cartDetails = cartRepository.findByUserId(userid);
@@ -45,8 +41,20 @@ public class CartServiceImpl implements CartService{
 	@Override
 	public Cart removeFromCart(int userid, int productId, int quantity) {
 		List<Cart> cartDetails = cartRepository.findByUserId(userid);
-		
-		return null;
+		Product p = productRepository.findById(productId).get();
+		boolean check = cartDetails.stream().anyMatch(r -> r.getProductId() == productId);
+		Cart c = new Cart(); 
+		if(check) {
+			c = cartRepository.findByProductId(productId);
+			c.setQuantity(c.getQuantity()- quantity);
+			c.setTotalAmount((double)c.getQuantity()*p.getPrice());
+		}
+		else {
+			return null;
+		}
+		cartRepository.save(c);
+		return c;
 	}
+	
 
 }

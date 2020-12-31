@@ -728,3 +728,8 @@ Caused by: org.springframework.data.mapping.PropertyReferenceException: No prope
 2020-12-31 11:55:40 INFO  o.a.c.c.C.[.[.[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2020-12-31 11:55:40 INFO  o.s.w.s.DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
 2020-12-31 11:55:40 INFO  o.s.w.s.DispatcherServlet:547 - Completed initialization in 2 ms
+2020-12-31 12:20:18 INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin:159 - Application shutdown requested.
+2020-12-31 12:20:18 INFO  o.s.s.c.ThreadPoolTaskExecutor:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-31 12:20:18 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-31 12:20:18 INFO  c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2020-12-31 12:20:18 INFO  c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.

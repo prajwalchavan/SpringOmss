@@ -15,8 +15,21 @@ public class CartController {
 	CartServiceImpl cartService;
 
 	@PostMapping("/AddToCart")
-	public Cart AddProduct(@RequestParam int userId, @RequestParam int productId, @RequestParam int quantity) {
-		return cartService.addToCart(userId, productId, quantity);
+	public String AddProduct(@RequestParam int userId, @RequestParam int productId, @RequestParam int quantity) {
+	  cartService.addToCart(userId, productId, quantity);
+	  return " Product Added/Updated in Cart";
+	}
+	
+	@PostMapping("/RemoveFromCart")
+	public String RemoveProduct(@RequestParam int userId, @RequestParam int productId, @RequestParam int quantity) {
+		Cart c = cartService.removeFromCart(userId, productId, quantity);
+		if(  c != null) {
+			
+			return "Product removed from cart";
+		}
+		else {
+			return "Entered Product not found in cart";
+		}
 	}
 
 }
