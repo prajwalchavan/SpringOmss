@@ -55,6 +55,10 @@ public class CartServiceImpl implements CartService{
 		cartRepository.save(c);
 		return c;
 	}
+
+	public List<Cart> getCartByUserId(int userId) {
+		return cartRepository.findByUserId(userId);
+	}
 	
 
 }

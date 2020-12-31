@@ -15,11 +15,15 @@ public class Order {
 	@Column(name = "orderId")
 	private int orderId;
 	@Column(name = "userId")
-	private String userId;
+	private int userId;
 	@Column(name = "orderDate")
 	private String orderDate;
 	@Column(name = "deliveryAddress")
 	private String deliveryAddress;
+	@Column(name = "listOfProducts")
+	private String listOfProducts;
+	@Column(name = "totalAmount")
+	private double totalAmount;
 	@Column(name = "payment")
 	boolean payment;
 	@Column(name = "orderStatus")
@@ -29,11 +33,14 @@ public class Order {
 		super();
 	}
 
-	public Order(String userId, String orderDate, String deliveryAddress, boolean payment, String orderStatus) {
+	public Order(int userId, String orderDate, String deliveryAddress, String listOfProducts,
+			double totalAmount, boolean payment, String orderStatus) {
 		super();
 		this.userId = userId;
 		this.orderDate = orderDate;
 		this.deliveryAddress = deliveryAddress;
+		this.listOfProducts = listOfProducts;
+		this.totalAmount = totalAmount;
 		this.payment = payment;
 		this.orderStatus = orderStatus;
 	}
@@ -46,11 +53,11 @@ public class Order {
 		this.orderId = orderId;
 	}
 
-	public String getUserId() {
+	public int getUserId() {
 		return userId;
 	}
 
-	public void setUserId(String userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 
@@ -68,6 +75,22 @@ public class Order {
 
 	public void setDeliveryAddress(String deliveryAddress) {
 		this.deliveryAddress = deliveryAddress;
+	}
+
+	public String getListOfProducts() {
+		return listOfProducts;
+	}
+
+	public void setListOfProducts(String listOfProducts) {
+		this.listOfProducts = listOfProducts;
+	}
+
+	public double getTotalAmount() {
+		return totalAmount;
+	}
+
+	public void setTotalAmount(double totalAmount) {
+		this.totalAmount = totalAmount;
 	}
 
 	public boolean isPayment() {
@@ -89,7 +112,9 @@ public class Order {
 	@Override
 	public String toString() {
 		return "Order [orderId=" + orderId + ", userId=" + userId + ", orderDate=" + orderDate + ", deliveryAddress="
-				+ deliveryAddress + ", payment=" + payment + ", orderStatus=" + orderStatus + "]";
+				+ deliveryAddress + ", listOfProducts=" + listOfProducts + ", totalAmount=" + totalAmount + ", payment="
+				+ payment + ", orderStatus=" + orderStatus + "]";
 	}
 
+	
 }

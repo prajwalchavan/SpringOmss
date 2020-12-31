@@ -19,6 +19,12 @@ import com.project.omss.exception.USERException;
 import com.project.omss.repository.UserJpaRepository;
 import com.project.omss.service.UserService;
 
+
+/**
+ * this is controller class of User.
+ * @author Prajwal
+ *
+ */
 @RestController
 public class UserController {
 
@@ -27,11 +33,19 @@ public class UserController {
 	@Autowired
 	UserService userService;
 
+	/**
+	 * 
+	 * @param User
+	 * @return
+	 * @throws Exception
+	 */
 	@PostMapping("/Register")
 	private String saveUser(@RequestBody User User) throws Exception {
 		if (User.getUserId() != 0)
 			return User.getUserId() + " " + userService.saveOrUpdate(User);
 		else
+			//insert logger error
+			logger.error("Exception Occured!!! USER field has incoreect data");
 			throw new USERException(" Exception Occured!!! USER field has incoreect data");
 	}
 

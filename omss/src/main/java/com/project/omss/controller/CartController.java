@@ -1,6 +1,9 @@
 package com.project.omss.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,5 +34,11 @@ public class CartController {
 			return "Entered Product not found in cart";
 		}
 	}
+	
+	@GetMapping("/ViewCart")
+	private List<Cart> vewCartDetails(@RequestParam("userId") int userId) {
+		return cartService.getCartByUserId(userId);
+	}
+
 
 }

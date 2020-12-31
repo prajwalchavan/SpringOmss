@@ -6,4 +6,6 @@ import com.project.omss.entity.Order;
 
 public interface OrderJpaRepository extends JpaRepository<Order, Integer> {
 
+	Order findByUserId(int userId);
+
 }
