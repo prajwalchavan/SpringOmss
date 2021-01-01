@@ -44,7 +44,6 @@ public class UserController {
 		if (User.getUserId() != 0)
 			return User.getUserId() + " " + userService.saveOrUpdate(User);
 		else
-			//insert logger error
 			logger.error("Exception Occured!!! USER field has incoreect data");
 			throw new USERException(" Exception Occured!!! USER field has incoreect data");
 	}

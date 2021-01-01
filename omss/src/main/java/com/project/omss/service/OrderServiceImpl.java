@@ -1,7 +1,6 @@
 package com.project.omss.service;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -28,23 +27,21 @@ public class OrderServiceImpl implements OrderService{
 	@Override
 	public Order placeOrder(int userId, String deliveryAddress, boolean payment) {
 		List<Cart> cartDetails = cartRepository.findByUserId(userId);
+		double totalPrice = cartDetails.stream().map(p -> p.getTotalAmount()).reduce((p,q) -> p+q).get();
 		String com = " , ";
 		String cartOfUser = cartDetails.stream().map(Object::toString).collect(Collectors.joining(com));
-		Order o = new Order();
-		o.setListOfProducts(cartOfUser);
-		String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
-		o.setOrderDate(timeStamp);
-		//cartDetails.forEach();
-		double price = 500;
-		o.setTotalAmount(price);
+		String timeStamp = LocalDate.now().toString();
+		String status = "";
 		if(payment) {
-			o.setOrderStatus("Order Sucessfull");;
+			status = "Order Sucessfull";
 		}
 		else {
-			o.setOrderStatus("Payment Pending");
+			status= "Payment Pending";
 		}
-		orderRepository.save(o);
-		return o;
+		Order ord = new Order(userId, timeStamp, deliveryAddress, cartOfUser, totalPrice, payment, status);
+		orderRepository.save(ord);
+		//cartRepository.
+		return ord;
 	}
 
 }

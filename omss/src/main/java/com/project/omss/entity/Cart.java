@@ -1,14 +1,10 @@
 package com.project.omss.entity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -23,23 +19,21 @@ public class Cart {
 	private int userId;
 	@Column(name= "product_id")
 	private int productId;
+	@Column(name= "product_name")
+	private String productName;
 	@Column(name = "Quantity")
 	private int quantity;
 	@Column(name = "Total_Amount")
 	private double totalAmount;
 	
-//	@ManyToMany(mappedBy="carts" )
-//	private List<Product> Products = new ArrayList<>();
-	
-	
-	
 	public Cart() {
 		super();
 	}
-	public Cart( int userid, int productId, int quantity, double totalAmount) {
+	public Cart( int userid, int productId, String productName,  int quantity, double totalAmount) {
 		super();
 		this.userId = userid;
 		this.productId = productId;
+		this.productName = productName;
 		this.quantity = quantity;
 		this.totalAmount = totalAmount ;
 	}
@@ -74,16 +68,16 @@ public class Cart {
 		this.totalAmount = totalAmount;
 	}
 	
-//	public List<Product> getProducts() {
-//		return Products;
-//	}
-//	public void setProducts(List<Product> products) {
-//		Products = products;
-//	}
+	public String getProductName() {
+		return productName;
+	}
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
 	@Override
 	public String toString() {
 		return "Cart [cartId=" + cartId + ", userid=" + userId + ", productId=" + productId + ", quantity=" + quantity
-				+ ", totalAmount=" + totalAmount + "]";
+				+ ", productName=" + productName + " totalAmount=" + totalAmount + "]";
 	}
 	
 	

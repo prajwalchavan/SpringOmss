@@ -1,7 +1,7 @@
 package com.project.omss.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,7 +14,7 @@ public class OrderController {
 	@Autowired
 	OrderServiceImpl orderService;
 	
-	@PostMapping("/PlacrOrder")
+	@RequestMapping("/PlacrOrder")
 	public Order placeOrder(@RequestParam int userId, @RequestParam String deliveryAddress, @RequestParam boolean payment) {
 		return orderService.placeOrder(userId,deliveryAddress,payment);
 		}
