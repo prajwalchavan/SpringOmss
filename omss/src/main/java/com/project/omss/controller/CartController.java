@@ -19,8 +19,12 @@ public class CartController {
 
 	@PostMapping("/AddToCart")
 	public String AddProduct(@RequestParam int userId, @RequestParam int productId, @RequestParam int quantity) {
-	  cartService.addToCart(userId, productId, quantity);
+	  Cart c = cartService.addToCart(userId, productId, quantity);
+	  if( c != null) {
 	  return " Product Added/Updated in Cart";
+	  }else {
+		  return " Selected Quantity of product not present ";
+	  }
 	}
 	
 	@PostMapping("/RemoveFromCart")

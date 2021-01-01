@@ -40,7 +40,7 @@ public class OrderServiceImpl implements OrderService {
 		}
 		Order ord = new Order(userId, timeStamp, deliveryAddress, cartOfUser, totalPrice, payment, status);
 		orderRepository.save(ord);
-		// cartRepository.
+		//cartRepository.deleteById(id);
 		return ord;
 	}
 
