@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.project.omss.entity.Cart;
 import com.project.omss.entity.Order;
+import com.project.omss.entity.Product;
 import com.project.omss.repository.CartJpaRepository;
 import com.project.omss.repository.OrderJpaRepository;
 import com.project.omss.repository.ProductJpaRepository;
@@ -40,7 +41,13 @@ public class OrderServiceImpl implements OrderService {
 		}
 		Order ord = new Order(userId, timeStamp, deliveryAddress, cartOfUser, totalPrice, payment, status);
 		orderRepository.save(ord);
-		//cartRepository.deleteById(id);
+		for(Cart c : cartDetails) {
+			cartRepository.deleteById(c.getCartId());
+			Product prd = productRepository.findById(c.getProductId()).get();
+			int quantity = c.getQuantity();
+			prd.setQuantity(prd.getQuantity() - quantity);
+			productRepository.save(prd);
+		}
 		return ord;
 	}
 
