@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 
@@ -15,12 +16,15 @@ public class Cart {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "cart_id")
 	private int cartId;
+	@NotNull
 	@Column(name = "user_id")
 	private int userId;
+	@NotNull
 	@Column(name= "product_id")
 	private int productId;
 	@Column(name= "product_name")
 	private String productName;
+	@NotNull
 	@Column(name = "Quantity")
 	private int quantity;
 	@Column(name = "Total_Amount")

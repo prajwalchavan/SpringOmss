@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "order_table")
@@ -14,10 +16,13 @@ public class Order {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "orderId")
 	private int orderId;
+	@NotNull
 	@Column(name = "userId")
 	private int userId;
 	@Column(name = "orderDate")
 	private String orderDate;
+	@NotNull
+	@Size(min = 2, message = "Must have atleast 2 characters")
 	@Column(name = "deliveryAddress")
 	private String deliveryAddress;
 	@Column(name = "listOfProducts")

@@ -6,10 +6,17 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
+/**
+ * This the project for Online Medicine Shopping System
+ * 
+ * @author Prajwal
+ *
+ */
 @SpringBootApplication
-@ComponentScan({"com.project.omss.controller","com.project.omss.service"})
+@ComponentScan({ "com.project.omss.controller", "com.project.omss.service" })
 @EntityScan("com.project.omss.entity")
 @EnableJpaRepositories("com.project.omss.repository")
+
 public class OmssApplication {
 
 	public static void main(String[] args) {

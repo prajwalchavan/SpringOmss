@@ -1,6 +1,9 @@
 package com.project.omss.controller;
 
 import java.util.List;
+
+import javax.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +28,7 @@ import com.project.omss.service.UserService;
 @RestController
 public class UserController {
 
-	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
+	Logger logger = LoggerFactory.getLogger(UserController.class);
 
 	@Autowired
 	UserService userService;
@@ -37,7 +40,7 @@ public class UserController {
 	 * @throws Exception
 	 */
 	@PostMapping("/Register")
-	private String saveUser(@RequestBody User User) throws Exception {
+	private String saveUser(@Valid @RequestBody User User) throws Exception {
 		if (User.getUserId() > 0) {
 			if (User.getFirstName() != null && User.getLastName() != null && User.getAddress() != null
 					&& User.getMailId() != null && User.getPassword() != null || User.getMobileNo() != null)

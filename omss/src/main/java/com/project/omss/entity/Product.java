@@ -1,36 +1,33 @@
 package com.project.omss.entity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="product_table")
 public class Product {
 	@Id
+	@NotNull
 	@Column(name="productId")
 	private int productId;
+	@NotNull
+	@Size(min = 2, message = "Must have atleast 2 characters")
 	@Column(name="productName")
 	private String productName;
+	@NotNull
+	@Size(min = 2, message = "Must have atleast 2 characters")
 	@Column(name="category")
 	private String category;
+	@NotNull
 	@Column(name="quantity")
 	private int quantity;
+	@NotNull
 	@Column(name="price")
 	private double price;
-	
-//	@ManyToMany
-//	@JoinTable(name="products_in_cart",joinColumns=@JoinColumn(name="productId"),inverseJoinColumns=@JoinColumn(name="cartId")) 
-//	private List<Cart> carts = new ArrayList<>();
-	
-	
 	
 	public Product() {
 		super();

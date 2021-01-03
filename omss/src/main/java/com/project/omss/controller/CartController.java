@@ -2,55 +2,99 @@ package com.project.omss.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.project.omss.entity.Cart;
 import com.project.omss.exception.APIException;
 import com.project.omss.service.CartServiceImpl;
 
+/**
+ * This is Controller class for Cart.
+ * 
+ * @author Prajwal
+ *
+ */
 @RestController
 public class CartController {
+
+	Logger logger = LoggerFactory.getLogger(CartController.class);
 
 	@Autowired
 	CartServiceImpl cartService;
 
+	/**
+	 * The method is used to add products to cart.
+	 * 
+	 * @param userId    First parameter for the method. Accepts user ID.
+	 * @param productId Second parameter for the method. Accepts product ID.
+	 * @param quantity  Third parameter for the method. Accepts Quantity of product.
+	 * @return Returns the message " Product Added/Updated in Cart" if products are
+	 *         added successfully else returns the message "Selected Quantity of
+	 *         product not present" if number of quantity entered is not present in
+	 *         the stock.
+	 * @throws Exception is thrown if details are not entered correctly.
+	 */
 	@PostMapping("/AddToCart")
 	public String AddProduct(@RequestParam int userId, @RequestParam int productId, @RequestParam int quantity)
 			throws Exception {
 		Cart c = cartService.addToCart(userId, productId, quantity);
 		if (userId > 0 && productId > 0 && quantity > 0) {
 			if (c != null) {
+
+				logger.info("Product Added/Updated in Cart");
 				return " Product Added/Updated in Cart";
 			} else {
 				return " Selected Quantity of product not present ";
 			}
 		} else {
+
+			logger.error(" Exception Occured!!! Product cannot be loaded to cart. Please check details ");
 			throw new APIException("Exception Occured!!! Product cannot be loaded to cart. Please check details");
 		}
 	}
 
+	/**
+	 * The method is used to remove products from cart.
+	 * 
+	 * @param userId    First parameter for the method. Accepts user ID.
+	 * @param productId Second parameter for the method. Accepts product ID.
+	 * @param quantity  Third parameter for the method. Accepts Quantity of product.
+	 * @return Returns the message "Product removed from cart" if products are
+	 *         removed successfully else returns the message "Entered Product not
+	 *         found in cart" if entered product ID is not present in the cart.
+	 * @throws Exception is thrown if details are not entered correctly.
+	 */
 	@PostMapping("/RemoveFromCart")
 	public String RemoveProduct(@RequestParam int userId, @RequestParam int productId, @RequestParam int quantity)
 			throws Exception {
 		Cart c = cartService.removeFromCart(userId, productId, quantity);
 		if (userId > 0 && productId > 0 && quantity > 0) {
 			if (c != null) {
-
+				logger.info("Product removed in Cart");
 				return "Product removed from cart";
 			} else {
+				logger.error("Entered Product not found in cart");
 				return "Entered Product not found in cart";
 			}
 		} else {
+			logger.error("Exception Occured!!! Product cannot be removed from cart. Please check details");
 			throw new APIException("Exception Occured!!! Product cannot be removed from cart. Please check details");
 		}
 	}
 
+	/**
+	 * 
+	 * @param userId parameter for the method. Accepts user ID.
+	 * @return List of details in the cart are returned.
+	 */
 	@GetMapping("/ViewCart")
 	private List<Cart> vewCartDetails(@RequestParam("userId") int userId) {
+		logger.info("Cart is displayed");
 		return cartService.getCartByUserId(userId);
 	}
 

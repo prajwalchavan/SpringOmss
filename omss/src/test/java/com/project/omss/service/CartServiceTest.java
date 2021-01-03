@@ -29,8 +29,6 @@ public class CartServiceTest {
 	@MockBean
 	private CartJpaRepository cartRepository;
 	
-//	@MockBean
-//	private ProductJpaRepository productRepository;
 
 	@Test
 	public void testCartByUserId() 
