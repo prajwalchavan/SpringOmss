@@ -2,6 +2,8 @@ package com.project.omss.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.project.omss.entity.Cart;
 import com.project.omss.exception.APIException;
 import com.project.omss.service.CartServiceImpl;
@@ -40,7 +43,7 @@ public class CartController {
 	 * @throws Exception is thrown if details are not entered correctly.
 	 */
 	@PostMapping("/AddToCart")
-	public String AddProduct(@RequestParam int userId, @RequestParam int productId, @RequestParam int quantity)
+	public String AddProduct(@Valid @RequestParam int userId,@Valid @RequestParam int productId,@Valid @RequestParam int quantity)
 			throws Exception {
 		Cart c = cartService.addToCart(userId, productId, quantity);
 		if (userId > 0 && productId > 0 && quantity > 0) {

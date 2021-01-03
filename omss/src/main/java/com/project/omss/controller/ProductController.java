@@ -2,6 +2,10 @@ package com.project.omss.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,8 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.project.omss.entity.Product;
 import com.project.omss.exception.APIException;
 import com.project.omss.service.ProductServiceImpl;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 @RestController
 public class ProductController {
 	private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
@@ -25,7 +27,7 @@ public class ProductController {
 	ProductServiceImpl productService;
 
 	@PostMapping("/ProductAdd")
-	private String saveProduct(@RequestBody Product Product) throws Exception {
+	private String saveProduct(@Valid @RequestBody Product Product) throws Exception {
 		if (Product.getProductId() != 0 && Product.getProductId() > 0) {
 			if (Product.getCategory() != "" && Product.getProductName() != "" && Product.getCategory() != null
 					&& Product.getProductName() != null && Product.getPrice() > 0 && Product.getQuantity() > 0)
@@ -71,7 +73,7 @@ public class ProductController {
 	// Updating a product
 
 	@PostMapping("/update")
-	public ResponseEntity<Product> updateProduct(@RequestBody Product product) {
+	public ResponseEntity<Product> updateProduct(@Valid @RequestBody Product product) {
 		Product updateProduct = productService.updateProduct(product);
 		if (updateProduct == null) {
 			return new ResponseEntity("Product not Updated.", HttpStatus.NOT_MODIFIED);

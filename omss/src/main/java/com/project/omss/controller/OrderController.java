@@ -2,6 +2,8 @@ package com.project.omss.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,8 +21,8 @@ public class OrderController {
 	OrderServiceImpl orderService;
 	
 	@RequestMapping("/PlaceOrder")
-	public Order placeOrder(@RequestParam int userId, @RequestParam String deliveryAddress,
-			@RequestParam boolean payment) throws Exception {
+	public Order placeOrder(@Valid @RequestParam int userId,@Valid @RequestParam String deliveryAddress,
+			@Valid @RequestParam boolean payment) throws Exception {
 		if (userId > 0 && deliveryAddress != null && deliveryAddress != "")
 			return orderService.placeOrder(userId, deliveryAddress, payment);
 		else
