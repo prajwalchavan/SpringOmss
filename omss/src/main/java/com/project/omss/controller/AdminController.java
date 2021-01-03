@@ -2,7 +2,8 @@ package com.project.omss.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
+import org.springframework.web.bind.annotation.RestController;
+@RestController
 public class AdminController {
 
 	@GetMapping("/GetAdminFunctions")
@@ -11,11 +12,11 @@ public class AdminController {
 	}
 
 	@GetMapping("/Admin/login")
-	private String AdminLogin(@RequestParam("adminId") int adminId, @RequestParam("password") String password) {
-		if (adminId == 1234 && password == "admin") {
+	private String AdminLogin(@RequestParam("userName") String userName, @RequestParam("password") String password) {
+		if (userName == "admin" && password == "admin") {
 			return "Admin login Sucessful \n(/GetAdminFunctions)";
 		} else {
-			return "Admin Lodin Denied";
+			return "Admin Login Denied";
 		}
 
 	}
