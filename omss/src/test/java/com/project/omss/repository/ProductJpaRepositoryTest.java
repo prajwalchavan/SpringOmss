@@ -1,4 +1,4 @@
-package com.project.omss;
+package com.project.omss.repository;
 
 import static org.junit.Assert.assertNotNull;
 

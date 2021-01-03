@@ -1,4 +1,4 @@
-package com.project.omss;
+package com.project.omss.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

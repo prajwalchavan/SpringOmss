@@ -1,4 +1,4 @@
-package com.project.omss;
+package com.project.omss.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -20,7 +20,7 @@ import com.project.omss.service.ProductServiceImpl;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ProductServiceImplTest {
+public class ProductServiceTest {
 	
 	@Autowired
 	private ProductServiceImpl productService;
