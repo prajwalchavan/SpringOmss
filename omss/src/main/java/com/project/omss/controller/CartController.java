@@ -42,7 +42,7 @@ public class CartController {
 	 *         the stock.
 	 * @throws Exception is thrown if details are not entered correctly.
 	 */
-	@PostMapping("/AddToCart")
+	@PostMapping("/User/AddToCart")
 	public String AddProduct(@Valid @RequestParam int userId,@Valid @RequestParam int productId,@Valid @RequestParam int quantity)
 			throws Exception {
 		Cart c = cartService.addToCart(userId, productId, quantity);
@@ -72,7 +72,7 @@ public class CartController {
 	 *         found in cart" if entered product ID is not present in the cart.
 	 * @throws Exception is thrown if details are not entered correctly.
 	 */
-	@PostMapping("/RemoveFromCart")
+	@PostMapping("/User/RemoveFromCart")
 	public String RemoveProduct(@RequestParam int userId, @RequestParam int productId, @RequestParam int quantity)
 			throws Exception {
 		Cart c = cartService.removeFromCart(userId, productId, quantity);
@@ -95,7 +95,7 @@ public class CartController {
 	 * @param userId parameter for the method. Accepts user ID.
 	 * @return List of details in the cart are returned.
 	 */
-	@GetMapping("/ViewCart")
+	@GetMapping("/User/ViewCart")
 	private List<Cart> vewCartDetails(@RequestParam("userId") int userId) {
 		logger.info("Cart is displayed");
 		return cartService.getCartByUserId(userId);
