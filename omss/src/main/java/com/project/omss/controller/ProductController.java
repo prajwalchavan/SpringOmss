@@ -29,7 +29,7 @@ import com.project.omss.service.ProductServiceImpl;
 
 @RestController
 public class ProductController {
-	private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
+	static Logger LOGGER = LoggerFactory.getLogger(ProductController.class); 
 
 	@Autowired
 	ProductServiceImpl productService;
@@ -37,24 +37,24 @@ public class ProductController {
 	/**
 	 * This method is used to add products.
 	 * 
-	 * @param Product First parameter for the method. Accepts Products.
+	 * @param product First parameter for the method. Accepts Products.
 	 * @return product added successfully or not.
 	 * @throws Exception if details are not entered correctly.
 	 */
 
 	@PostMapping("/Admin/ProductAdd")
-	private String saveProduct(@Valid @RequestBody Product Product) throws Exception {
-		if (Product.getProductId() > 0) {
-			if (Product.getCategory() != "" && Product.getProductName() != "" && Product.getCategory() != null
-					&& Product.getProductName() != null && Product.getPrice() > 0 && Product.getQuantity() > 0) {
-				logger.info("Product Added");
-				return Product.getProductId() + " " + productService.saveOrUpdate(Product);
+	private String saveProduct(@Valid @RequestBody final Product product) throws Exception {
+		if (product.getProductId() > 0) {
+			if (product.getCategory() != "" && product.getProductName() != "" && product.getCategory() != null
+					&& product.getProductName() != null && product.getPrice() > 0 && product.getQuantity() > 0) {
+				LOGGER.info("Product Added");
+				return product.getProductId() + " " + productService.saveOrUpdate(product);
 			} else {
-				logger.error("Exception Occured!!! PRODUCT field has incoreect data");
+				LOGGER.error("Exception Occured!!! PRODUCT field has incoreect data");
 				throw new APIException(" Exception Occured!!!INVALID PRODUCT DETAILS!!!Please Check Product Details.");
 			}
 		} else {
-			logger.error("Exception Occured!!! PRODUCT field has incorrect data");
+			LOGGER.error("Exception Occured!!! PRODUCT field has incorrect data");
 			throw new APIException(" Exception Occured!!!INVALID PRODUCT ID!!!Please check Product ID");
 		}
 
@@ -68,7 +68,7 @@ public class ProductController {
 
 	@GetMapping("/getProducts")
 	private List<Product> getAllProducts() {
-		logger.info("All products Fetched");
+		LOGGER.info("All products Fetched");
 		return productService.getAllProducts();
 	}
 
@@ -83,10 +83,10 @@ public class ProductController {
 	@RequestMapping("/getProductByName")
 	private List<Product> getProductByName(@RequestParam("productname") String productname) throws Exception {
 		if (productname != null && productname != "") {
-			logger.info("products Fetched by name");
+			LOGGER.info("products Fetched by name");
 			return productService.getProductByName(productname);
 		} else {
-			logger.error("Exception Occured!!! PRODUCT Name has incorrect data");
+			LOGGER.error("Exception Occured!!! PRODUCT Name has incorrect data");
 			throw new APIException("INVALID Product Name");
 		}
 	}
@@ -102,10 +102,10 @@ public class ProductController {
 	@RequestMapping("/getProductsByCategory")
 	private List<Product> getProductByCategory(@RequestParam("category") String category) throws Exception {
 		if (category != null && category != "") {
-			logger.info("products Fetched by name");
+			LOGGER.info("products Fetched by name");
 			return productService.getProductByCategory(category);
 		} else {
-			logger.error("Exception Occured!!! PRODUCT Category has incorrect data");
+			LOGGER.error("Exception Occured!!! PRODUCT Category has incorrect data");
 			throw new APIException("INVALID Product Category");
 		}
 	}
@@ -118,15 +118,15 @@ public class ProductController {
 	 */
 
 	@PostMapping("/Admin/updateProduct")
-	public ResponseEntity<Product> updateProduct(@Valid @RequestBody Product Product) {
-		Product updateProduct = productService.updateProduct(Product);
-		if (Product.getCategory() != "" || Product.getProductName() != "" || Product.getCategory() != null
-				|| Product.getProductName() != null || Product.getPrice() > 0 || Product.getQuantity() > 0) {
-			logger.info("Products Updated");
+	public ResponseEntity<Product> updateProduct(@Valid @RequestBody final Product product) {
+		Product updateProduct = productService.updateProduct(product);
+		if (product.getCategory() != "" || product.getProductName() != "" || product.getCategory() != null
+				|| product.getProductName() != null || product.getPrice() > 0 || product.getQuantity() > 0) {
+			LOGGER.info("Products Updated");
 			return new ResponseEntity<Product>(updateProduct, HttpStatus.OK);
 
 		} else {
-			logger.error("Products are not Updated");
+			LOGGER.error("Products are not Updated");
 
 			return new ResponseEntity("Product not Updated.", HttpStatus.NOT_MODIFIED);
 		}

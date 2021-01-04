@@ -43,7 +43,7 @@ public class CartController {
 	 * @throws Exception is thrown if details are not entered correctly.
 	 */
 	@PostMapping("/User/AddToCart")
-	public String AddProduct(@Valid @RequestParam int userId,@Valid @RequestParam int productId,@Valid @RequestParam int quantity)
+	public String addProduct(@Valid @RequestParam int userId,@Valid @RequestParam int productId,@Valid @RequestParam int quantity)
 			throws Exception {
 		Cart c = cartService.addToCart(userId, productId, quantity);
 		if (userId > 0 && productId > 0 && quantity > 0) {
@@ -73,7 +73,7 @@ public class CartController {
 	 * @throws Exception is thrown if details are not entered correctly.
 	 */
 	@PostMapping("/User/RemoveFromCart")
-	public String RemoveProduct(@RequestParam int userId, @RequestParam int productId, @RequestParam int quantity)
+	public String removeProduct(@RequestParam int userId, @RequestParam int productId, @RequestParam int quantity)
 			throws Exception {
 		Cart c = cartService.removeFromCart(userId, productId, quantity);
 		if (userId > 0 && productId > 0 && quantity > 0) {

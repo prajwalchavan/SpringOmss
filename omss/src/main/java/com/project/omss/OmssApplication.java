@@ -8,12 +8,10 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-import com.project.omss.controller.CartController;
-
 /**
  * This the project for Online Medicine Shopping System
  * 
- * @author Prajwal
+ * @author PrajwalChavan.
  *
  */
 @SpringBootApplication
@@ -22,11 +20,13 @@ import com.project.omss.controller.CartController;
 @EnableJpaRepositories("com.project.omss.repository")
 
 public class OmssApplication {
-	
-	static Logger logger = LoggerFactory.getLogger(OmssApplication.class);
+	/**
+	 * logger initialized.
+	 */
+	 static private final Logger LOGGER = LoggerFactory.getLogger(OmssApplication.class);
 
 	public static void main(String[] args) {
-		logger.info("Application started");
+		LOGGER.info("Application started");
 		SpringApplication.run(OmssApplication.class, args);
 	}
 

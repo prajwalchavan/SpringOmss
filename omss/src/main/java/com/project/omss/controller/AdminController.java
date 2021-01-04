@@ -3,7 +3,6 @@ package com.project.omss.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,7 +24,7 @@ public class AdminController {
 	 */
 
 	@GetMapping("/GetAdminFunctions")
-	private String UserFunction() {
+	public String userFunction() {
 		logger.info("getting Admin functions");
 		return "1. /Admin/login  \n2. /Admin/getAllUsers \n3. /Admin/{userId} \n4. /Admin/ProductAdd \n5. /getProductsByCategory \n6. /getProductByName \n7. /getProducts \n8. /Admin/updateProduct \n9. /User/PlaceOrder \n10. /Admin/ViewAllOrders \n11. /Admin/Logout";
 	}
@@ -39,7 +38,7 @@ public class AdminController {
 	 */
 
 	@GetMapping("/Admin/login")
-	private String AdminLogin(@RequestParam("userName") String userName, @RequestParam("password") String password) {
+	private String adminLogin(@RequestParam("userName") String userName, @RequestParam("password") String password) {
 		if (userName.equals("admin") && password.equals("admin")) {
 			logger.info("Admin logged in");
 			return "Admin login Successful \n(/GetAdminFunctions)";
@@ -56,7 +55,7 @@ public class AdminController {
 	 */
 
 	@GetMapping("/Admin/Logout")
-	private String AdminLogout() {
+	private String adminLogout() {
 		logger.info("Admin logged out");
 		return "--------Logged Out--------";
 	}

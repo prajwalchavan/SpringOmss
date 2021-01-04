@@ -28,7 +28,7 @@ import com.project.omss.service.UserService;
 @RestController
 public class UserController {
 
-	public static final Logger logger = LoggerFactory.getLogger(UserController.class);
+	Logger logger = LoggerFactory.getLogger(UserController.class);
 
 	@Autowired
 	UserService userService;
@@ -41,25 +41,25 @@ public class UserController {
 	 */
 
 	@GetMapping("/GetUserFunctions")
-	private String UserFunction() {
+	private String userFunction() {
 		return "1. /User/RegisterUser \n2. /User/login \n3. /getProducts \n4. /getProductByName \n5. /getProductsByCategory \n6. /User/AddToCart \n7. /User/RemoveFromCart \n8. /User/ViewCart \n9. /User/PlaceOrder \n10. /User/ViewMyOrders \n11. /User/Logout";
 	}
 
 	/**
 	 * This method is used to register User.
 	 * 
-	 * @param User First parameter for the method. Accepts user details.
+	 * @param user First parameter for the method. Accepts user details.
 	 * @return User registered.
 	 * @throws Exception if incorrect details are entered.
 	 */
 
 	@PostMapping("/User/RegisterUser")
-	private String saveUser(@Valid @RequestBody User User) throws Exception {
-		if (User.getUserId() > 0) {
-			if (User.getFirstName() != null && User.getLastName() != null && User.getAddress() != null
-					&& User.getMailId() != null && User.getPassword() != null || User.getMobileNo() != null) {
+	private final String saveUser(@Valid @RequestBody User user) throws Exception {
+		if (user.getUserId() > 0) {
+			if (user.getFirstName() != null && user.getLastName() != null && user.getAddress() != null
+					&& user.getMailId() != null && user.getPassword() != null || user.getMobileNo() != null) {
 				logger.info("User Added sucessfully");
-				return User.getUserId() + " " + userService.saveOrUpdate(User) + "\n" + "(/GetUserFunctions)";
+				return user.getUserId() + " " + userService.saveOrUpdate(user) + "\n" + "(/GetUserFunctions)";
 			} else {
 				logger.error("Exception Occured!!! USER field has incorrect data");
 				throw new USERException(
@@ -131,7 +131,7 @@ public class UserController {
 	 */
 
 	@GetMapping("/User/Logout")
-	private String UserLogout() {
+	public String userLogout() {
 		return "--------Logged Out--------";
 	}
 }
