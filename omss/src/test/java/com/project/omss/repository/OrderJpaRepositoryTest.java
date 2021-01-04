@@ -34,6 +34,13 @@ public class OrderJpaRepositoryTest {
 	public void testGetByUserId() 
 	{
 		Order o = new Order();
+		o.setUserId(5);
+		o.setOrderDate("Januray 3, 2021");
+		o.setListOfProducts("Vicks, Crocin");
+		o.setDeliveryAddress("Mumbai");
+		o.setTotalAmount(200);
+		o.setPayment(true);
+		o.setOrderStatus("processing");
 		Order savedInDb=entityManager.persist(o);
 		Order getFromDb=orderRepo.findByUserId(savedInDb.getUserId());
 		

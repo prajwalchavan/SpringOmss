@@ -2,6 +2,7 @@ package com.project.omss.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,8 +21,8 @@ import com.project.omss.repository.ProductJpaRepository;
 
 @Service
 public class ProductServiceImpl implements ProductService {
-	
-	Logger logger = LoggerFactory.getLogger(ProductServiceImpl.class);	
+
+	Logger logger = LoggerFactory.getLogger(ProductServiceImpl.class);
 
 	@Autowired
 	ProductJpaRepository productRepository;
@@ -83,5 +84,4 @@ public class ProductServiceImpl implements ProductService {
 		Product p = productRepository.save(product);
 		return p;
 	}
-
 }

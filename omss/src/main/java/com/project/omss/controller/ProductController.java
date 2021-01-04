@@ -44,7 +44,7 @@ public class ProductController {
 
 	@PostMapping("/Admin/ProductAdd")
 	private String saveProduct(@Valid @RequestBody Product Product) throws Exception {
-		if (Product.getProductId() != 0 && Product.getProductId() > 0) {
+		if (Product.getProductId() > 0) {
 			if (Product.getCategory() != "" && Product.getProductName() != "" && Product.getCategory() != null
 					&& Product.getProductName() != null && Product.getPrice() > 0 && Product.getQuantity() > 0) {
 				logger.info("Product Added");
@@ -118,13 +118,18 @@ public class ProductController {
 	 */
 
 	@PostMapping("/Admin/updateProduct")
-	public ResponseEntity<Product> updateProduct(@Valid @RequestBody Product product) {
-		Product updateProduct = productService.updateProduct(product);
-		if (updateProduct == null) {
+	public ResponseEntity<Product> updateProduct(@Valid @RequestBody Product Product) {
+		Product updateProduct = productService.updateProduct(Product);
+		if (Product.getCategory() != "" || Product.getProductName() != "" || Product.getCategory() != null
+				|| Product.getProductName() != null || Product.getPrice() > 0 || Product.getQuantity() > 0) {
+			logger.info("Products Updated");
+			return new ResponseEntity<Product>(updateProduct, HttpStatus.OK);
+
+		} else {
 			logger.error("Products are not Updated");
+
 			return new ResponseEntity("Product not Updated.", HttpStatus.NOT_MODIFIED);
 		}
-		logger.info("Products Updated");
-		return new ResponseEntity<Product>(updateProduct, HttpStatus.OK);
+
 	}
 }

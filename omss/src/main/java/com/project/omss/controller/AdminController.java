@@ -3,6 +3,7 @@ package com.project.omss.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -39,7 +40,7 @@ public class AdminController {
 
 	@GetMapping("/Admin/login")
 	private String AdminLogin(@RequestParam("userName") String userName, @RequestParam("password") String password) {
-		if (userName == "admin" && password == "admin") {
+		if (userName.equals("admin") && password.equals("admin")) {
 			logger.info("Admin logged in");
 			return "Admin login Successful \n(/GetAdminFunctions)";
 		} else {

@@ -1,4 +1,4 @@
-package com.project.omss.exception;
+package com.project.omss.controller;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -10,6 +10,11 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
+
+import com.project.omss.exception.APIException;
+import com.project.omss.exception.ErrorDetails;
+import com.project.omss.exception.ErrorMessage;
+import com.project.omss.exception.USERException;
 
 /**
  * Exception handler class for all controller classes.

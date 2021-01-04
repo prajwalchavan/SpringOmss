@@ -30,11 +30,17 @@ public class UserJpaRepositoryTest {
 	
 	@Autowired
 	private UserJpaRepository  userJpaRepository ;
-	
 	@Test
 	public void testSaveAndUpdateUser() 
 	{
 		User user =new User();
+		user.setFirstName("neha");
+	    user.setLastName("kadam");
+	    user.setMailId("neha123@gmail.com");
+	    user.setMobileNo("9865741236");
+	    user.setPassword("Neh@1234");
+	    user.setAddress("kalyan");
+	    
 		User savedInDb=entityManager.persist(user);
 		User getFromDb=userJpaRepository.findByUserId(savedInDb.getUserId());
 		
@@ -46,12 +52,13 @@ public class UserJpaRepositoryTest {
 	public void testGetByUserById() 
 	{
 		User user=new User();
-	    user.setUserId(4);
+	    //user.setUserId(4);
 	    user.setFirstName("neha");
 	    user.setLastName("kadam");
 	    user.setMailId("neha123@gmail.com");
 	    user.setMobileNo("9865741236");
-	    user.setPassword("neha12");
+	    user.setPassword("Neh@1234");
+	    user.setAddress("kalyan");
 	    
 	    User savedInDb=entityManager.persist(user);
 		User getFromDb=userJpaRepository.findByUserId(savedInDb.getUserId());
@@ -66,7 +73,8 @@ public class UserJpaRepositoryTest {
 	    user1.setLastName("kadam");
 	    user1.setMailId("neha123@gmail.com");
 	    user1.setMobileNo("9865741236");
-	    user1.setPassword("neha12");
+	    user1.setPassword("neha@NNN12");
+	    user1.setAddress("kalyan");
 	    
 	    User user2=new User();
 	    user2.setFirstName("omkar");
@@ -74,6 +82,7 @@ public class UserJpaRepositoryTest {
 	    user2.setMailId("omkar123@gmail.com");
 	    user2.setMobileNo("9865741456");
 	    user2.setPassword("omkar12");
+	    user2.setAddress("kalyan");
 	    
 	    entityManager.persist(user1);
 	    entityManager.persist(user1);
