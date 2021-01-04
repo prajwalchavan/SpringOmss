@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,8 +17,18 @@ import com.project.omss.repository.CartJpaRepository;
 import com.project.omss.repository.OrderJpaRepository;
 import com.project.omss.repository.ProductJpaRepository;
 
+/**
+ * This is service class for Order.
+ * 
+ * @author Prajwal
+ *
+ */
+
 @Service
 public class OrderServiceImpl implements OrderService {
+	
+	Logger logger = LoggerFactory.getLogger(OrderServiceImpl.class);
+	
 	@Autowired
 	ProductJpaRepository productRepository;
 
@@ -26,8 +38,13 @@ public class OrderServiceImpl implements OrderService {
 	@Autowired
 	OrderJpaRepository orderRepository;
 
+	/**
+	 * This method is used to place order.
+	 */
+
 	@Override
 	public Order placeOrder(int userId, String deliveryAddress, boolean payment) {
+		logger.info("place order method called");
 		List<Cart> cartDetails = cartRepository.findByUserId(userId);
 		double totalPrice = cartDetails.stream().map(p -> p.getTotalAmount()).reduce((p, q) -> p + q).get();
 		String com = " , ";
@@ -41,7 +58,7 @@ public class OrderServiceImpl implements OrderService {
 		}
 		Order ord = new Order(userId, timeStamp, deliveryAddress, cartOfUser, totalPrice, payment, status);
 		orderRepository.save(ord);
-		for(Cart c : cartDetails) {
+		for (Cart c : cartDetails) {
 			cartRepository.deleteById(c.getCartId());
 			Product prd = productRepository.findById(c.getProductId()).get();
 			int quantity = c.getQuantity();
@@ -51,11 +68,26 @@ public class OrderServiceImpl implements OrderService {
 		return ord;
 	}
 
+	/**
+	 * This method is used to get Order by User ID.
+	 * 
+	 * @param userId. Accepts UserID.
+	 * @return Oder details of given User ID.
+	 */
+
 	public Order getOrderByUserId(int userId) {
+		logger.info("get order by user ID method called");
 		return orderRepository.findByUserId(userId);
 	}
 
+	/**
+	 * This method is used to get all orders.
+	 * 
+	 * @return list of all Orders.
+	 */
+
 	public List<Order> getAllOrders() {
+		logger.info("Get all orders method called");
 		List<Order> order = new ArrayList<Order>();
 		orderRepository.findAll().forEach(u1 -> order.add(u1));
 		return order;

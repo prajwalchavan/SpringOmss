@@ -20,12 +20,27 @@ import com.project.omss.entity.Product;
 import com.project.omss.exception.APIException;
 import com.project.omss.service.ProductServiceImpl;
 
+/**
+ * This is controller class for Products.
+ * 
+ * @author Prajwal
+ *
+ */
+
 @RestController
 public class ProductController {
 	private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
 
 	@Autowired
 	ProductServiceImpl productService;
+
+	/**
+	 * This method is used to add products.
+	 * 
+	 * @param Product First parameter for the method. Accepts Products.
+	 * @return product added successfully or not.
+	 * @throws Exception if details are not entered correctly.
+	 */
 
 	@PostMapping("/Admin/ProductAdd")
 	private String saveProduct(@Valid @RequestBody Product Product) throws Exception {
@@ -45,13 +60,26 @@ public class ProductController {
 
 	}
 
+	/**
+	 * This method is used to view All products.
+	 * 
+	 * @return list of all Products with their details.
+	 */
+
 	@GetMapping("/getProducts")
 	private List<Product> getAllProducts() {
 		logger.info("All products Fetched");
 		return productService.getAllProducts();
 	}
 
-	// Find by Name
+	/**
+	 * This method is used to view product by name.
+	 * 
+	 * @param productname First parameter for the method. Accepts product name.
+	 * @return product with same name.
+	 * @throws Exception if product with same name is not available.
+	 */
+
 	@RequestMapping("/getProductByName")
 	private List<Product> getProductByName(@RequestParam("productname") String productname) throws Exception {
 		if (productname != null && productname != "") {
@@ -63,7 +91,14 @@ public class ProductController {
 		}
 	}
 
-	// Find by Category
+	/**
+	 * This method is used to view product by category.
+	 * 
+	 * @param category First parameter for the method. Accepts product category.
+	 * @return products with same category.
+	 * @throws Exception if products of this category is not available.
+	 */
+
 	@RequestMapping("/getProductsByCategory")
 	private List<Product> getProductByCategory(@RequestParam("category") String category) throws Exception {
 		if (category != null && category != "") {
@@ -75,14 +110,21 @@ public class ProductController {
 		}
 	}
 
-	// Updating a product
+	/**
+	 * This method is used to update products.
+	 * 
+	 * @param product First parameter for the method. Accepts product.
+	 * @return product updated or not.
+	 */
 
 	@PostMapping("/Admin/updateProduct")
 	public ResponseEntity<Product> updateProduct(@Valid @RequestBody Product product) {
 		Product updateProduct = productService.updateProduct(product);
 		if (updateProduct == null) {
+			logger.error("Products are not Updated");
 			return new ResponseEntity("Product not Updated.", HttpStatus.NOT_MODIFIED);
 		}
+		logger.info("Products Updated");
 		return new ResponseEntity<Product>(updateProduct, HttpStatus.OK);
 	}
 }

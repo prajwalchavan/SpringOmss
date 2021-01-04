@@ -34,16 +34,24 @@ public class UserController {
 	UserService userService;
 
 	/**
+	 * This method is used to view all user functions.
 	 * 
-	 * @param User
-	 * @return
-	 * @throws Exception
+	 * @param User First parameter for the method. Accepts user ID.
+	 * @return all user functions.
 	 */
 
 	@GetMapping("/GetUserFunctions")
 	private String UserFunction() {
-		return "1. /User/RegisterUser \n2. /User/login \n3. /getProducts \n4. /getProductByName \n5. /getProductsByCategory \n6. /User/AddToCart \n7. /User/RemoveFromCart \n8. /User/ViewCart \n9. /User/PlaceOrder \n10. /User/ViewMyOrders \n11. /User/Logout" ;
+		return "1. /User/RegisterUser \n2. /User/login \n3. /getProducts \n4. /getProductByName \n5. /getProductsByCategory \n6. /User/AddToCart \n7. /User/RemoveFromCart \n8. /User/ViewCart \n9. /User/PlaceOrder \n10. /User/ViewMyOrders \n11. /User/Logout";
 	}
+
+	/**
+	 * This method is used to register User.
+	 * 
+	 * @param User First parameter for the method. Accepts user details.
+	 * @return User registered.
+	 * @throws Exception if incorrect details are entered.
+	 */
 
 	@PostMapping("/User/RegisterUser")
 	private String saveUser(@Valid @RequestBody User User) throws Exception {
@@ -63,7 +71,14 @@ public class UserController {
 		}
 	}
 
-	// user login
+	/**
+	 * This method is used to login User.
+	 * 
+	 * @param userId   First parameter for the method. Accepts user ID.
+	 * @param password Second parameter for the method. Accepts password.
+	 * @return User logged in successfully or not.
+	 */
+
 	@PostMapping("/User/login")
 	public ResponseEntity<User> loginUser(@RequestParam("userId") int userId,
 			@RequestParam("password") String password) {
@@ -78,11 +93,25 @@ public class UserController {
 
 	}
 
+	/**
+	 * This method is used to view all Users.
+	 * 
+	 * @return list of all Users.
+	 */
+
 	@GetMapping("/Admin/getAllUsers")
 	private List<User> getAllUsers() {
 		logger.info("Users Retrived");
 		return userService.getAllUsers();
 	}
+
+	/**
+	 * This method is used to get user by user ID.
+	 * 
+	 * @param userId First parameter for the method. Accepts user ID.
+	 * @param user   Second parameter for the method. Fetch user class.
+	 * @return User of same ID if present.
+	 */
 
 	@GetMapping("/Admin/{userId}")
 	public ResponseEntity<User> getUserById(@PathVariable("userId") int userId, User user) {
@@ -94,7 +123,13 @@ public class UserController {
 			return ResponseEntity.badRequest().build();
 		}
 	}
-	
+
+	/**
+	 * This method is used to logout User.
+	 * 
+	 * @return user logged out successfully.
+	 */
+
 	@GetMapping("/User/Logout")
 	private String UserLogout() {
 		return "--------Logged Out--------";
