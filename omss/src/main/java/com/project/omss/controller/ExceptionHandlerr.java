@@ -24,13 +24,13 @@ import com.project.omss.exception.USERException;
  */
 @ControllerAdvice
 public class ExceptionHandlerr extends Exception {
-	private String INCORRECT_REQUEST = "INCORRECT_REQUEST";
-	private String BAD_REQUEST = "BAD_REQUEST";
+	private static final String INCORRECT_REQUEST = "INCORRECT_REQUEST";
+	private static final String BAD_REQUEST = "BAD_REQUEST";
 
 	@ExceptionHandler(value = Exception.class)
 	public ResponseEntity<ErrorMessage> handleException(Exception exception, WebRequest request) {
 
-		List<String> details = new ArrayList<>();
+		final List<String> details = new ArrayList<>();
 		details.add(exception.getLocalizedMessage());
 		ErrorMessage error = new ErrorMessage(INCORRECT_REQUEST, details);
 		return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);

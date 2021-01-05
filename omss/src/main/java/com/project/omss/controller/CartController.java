@@ -24,9 +24,14 @@ import com.project.omss.service.CartServiceImpl;
  */
 @RestController
 public class CartController {
-
+	/**
+	 * Loggers initialized.
+	 */
 	Logger logger = LoggerFactory.getLogger(CartController.class);
-
+	
+	/**
+	 * Auto wiring of cart service class.
+	 */
 	@Autowired
 	CartServiceImpl cartService;
 
@@ -45,9 +50,9 @@ public class CartController {
 	@PostMapping("/User/AddToCart")
 	public String addProduct(@Valid @RequestParam int userId,@Valid @RequestParam int productId,@Valid @RequestParam int quantity)
 			throws Exception {
-		Cart c = cartService.addToCart(userId, productId, quantity);
+		final Cart crt = cartService.addToCart(userId, productId, quantity);
 		if (userId > 0 && productId > 0 && quantity > 0) {
-			if (c != null) {
+			if (crt != null) {
 
 				logger.info("Product Added/Updated in Cart");
 				return " Product Added/Updated in Cart";
@@ -75,9 +80,9 @@ public class CartController {
 	@PostMapping("/User/RemoveFromCart")
 	public String removeProduct(@RequestParam int userId, @RequestParam int productId, @RequestParam int quantity)
 			throws Exception {
-		Cart c = cartService.removeFromCart(userId, productId, quantity);
+		final Cart crt = cartService.removeFromCart(userId, productId, quantity);
 		if (userId > 0 && productId > 0 && quantity > 0) {
-			if (c != null) {
+			if (crt != null) {
 				logger.info("Product removed in Cart");
 				return "Product removed from cart";
 			} else {
@@ -96,7 +101,7 @@ public class CartController {
 	 * @return List of details in the cart are returned.
 	 */
 	@GetMapping("/User/ViewCart")
-	private List<Cart> vewCartDetails(@RequestParam("userId") int userId) {
+	public List<Cart> vewCartDetails(@RequestParam("userId") int userId) {
 		logger.info("Cart is displayed");
 		return cartService.getCartByUserId(userId);
 	}

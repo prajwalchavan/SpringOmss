@@ -27,9 +27,14 @@ import com.project.omss.service.UserService;
  */
 @RestController
 public class UserController {
-
+	/**
+	 * Logger initialized.
+	 */
 	Logger logger = LoggerFactory.getLogger(UserController.class);
-
+	
+	/**
+	 * Auto wiring of user service class. 
+	 */
 	@Autowired
 	UserService userService;
 
@@ -41,7 +46,7 @@ public class UserController {
 	 */
 
 	@GetMapping("/GetUserFunctions")
-	private String userFunction() {
+	public String userFunction() {
 		return "1. /User/RegisterUser \n2. /User/login \n3. /getProducts \n4. /getProductByName \n5. /getProductsByCategory \n6. /User/AddToCart \n7. /User/RemoveFromCart \n8. /User/ViewCart \n9. /User/PlaceOrder \n10. /User/ViewMyOrders \n11. /User/Logout";
 	}
 
@@ -54,7 +59,7 @@ public class UserController {
 	 */
 
 	@PostMapping("/User/RegisterUser")
-	private final String saveUser(@Valid @RequestBody User user) throws Exception {
+	public final String saveUser(@Valid @RequestBody User user) throws Exception {
 		if (user.getUserId() > 0) {
 			if (user.getFirstName() != null && user.getLastName() != null && user.getAddress() != null
 					&& user.getMailId() != null && user.getPassword() != null || user.getMobileNo() != null) {
@@ -83,7 +88,7 @@ public class UserController {
 	public ResponseEntity<User> loginUser(@RequestParam("userId") int userId,
 			@RequestParam("password") String password) {
 		logger.info("User Login Method Started!");
-		User user = userService.loginUser(userId, password);
+		final User user = userService.loginUser(userId, password);
 		if (user != null) {
 			logger.info("User Logged in");
 			return new ResponseEntity("Login Successfull!!! \n /GetUserFunctions)", HttpStatus.OK);
@@ -100,7 +105,7 @@ public class UserController {
 	 */
 
 	@GetMapping("/Admin/getAllUsers")
-	private List<User> getAllUsers() {
+	List<User> getAllUsers() {
 		logger.info("Users Retrived");
 		return userService.getAllUsers();
 	}

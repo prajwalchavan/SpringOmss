@@ -16,7 +16,6 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.project.omss.entity.Cart;
 import com.project.omss.repository.CartJpaRepository;
-import com.project.omss.repository.ProductJpaRepository;
 
 
 @ExtendWith(MockitoExtension.class)

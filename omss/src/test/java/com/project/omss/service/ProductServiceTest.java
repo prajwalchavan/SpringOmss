@@ -16,7 +16,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.project.omss.entity.Product;
 import com.project.omss.repository.ProductJpaRepository;
-import com.project.omss.service.ProductServiceImpl;
 
 
 @RunWith(SpringRunner.class)

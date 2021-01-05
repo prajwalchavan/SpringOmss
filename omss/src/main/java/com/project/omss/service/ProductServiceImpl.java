@@ -2,7 +2,6 @@ package com.project.omss.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -79,7 +78,6 @@ public class ProductServiceImpl implements ProductService {
 	 */
 
 	public Product updateProduct(Product product) {
-
 		logger.info("Update product method called");
 		Product p = productRepository.save(product);
 		return p;

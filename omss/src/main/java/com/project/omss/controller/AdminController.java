@@ -38,7 +38,7 @@ public class AdminController {
 	 */
 
 	@GetMapping("/Admin/login")
-	private String adminLogin(@RequestParam("userName") String userName, @RequestParam("password") String password) {
+	public String adminLogin(@RequestParam("userName") String userName, @RequestParam("password") String password) {
 		if (userName.equals("admin") && password.equals("admin")) {
 			logger.info("Admin logged in");
 			return "Admin login Successful \n(/GetAdminFunctions)";
@@ -55,7 +55,7 @@ public class AdminController {
 	 */
 
 	@GetMapping("/Admin/Logout")
-	private String adminLogout() {
+	public String adminLogout() {
 		logger.info("Admin logged out");
 		return "--------Logged Out--------";
 	}

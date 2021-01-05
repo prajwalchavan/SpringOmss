@@ -36,7 +36,7 @@ public class UserServiceTest {
 		User user=new User();
 	    user.setUserId(3);
 	    user.setFirstName("neha");
-	    user.setLastName("kadam");
+	    user.setLastName("kadm");
 	    user.setMailId("neha123@gmail.com");
 	    user.setMobileNo("9865741236");
 	    user.setPassword("Neha@1211");

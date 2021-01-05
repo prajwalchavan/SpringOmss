@@ -67,7 +67,7 @@ public class ProductController {
 	 */
 
 	@GetMapping("/getProducts")
-	private List<Product> getAllProducts() {
+	public List<Product> getAllProducts() {
 		LOGGER.info("All products Fetched");
 		return productService.getAllProducts();
 	}
@@ -100,7 +100,7 @@ public class ProductController {
 	 */
 
 	@RequestMapping("/getProductsByCategory")
-	private List<Product> getProductByCategory(@RequestParam("category") String category) throws Exception {
+	public List<Product> getProductByCategory(@RequestParam("category") String category) throws Exception {
 		if (category != null && category != "") {
 			LOGGER.info("products Fetched by name");
 			return productService.getProductByCategory(category);

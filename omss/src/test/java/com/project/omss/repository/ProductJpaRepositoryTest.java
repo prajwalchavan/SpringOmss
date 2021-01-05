@@ -14,7 +14,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.project.omss.entity.Product;
-import com.project.omss.repository.ProductJpaRepository;
 
 @RunWith(SpringRunner.class)
 @AutoConfigureTestDatabase(replace= Replace.NONE)

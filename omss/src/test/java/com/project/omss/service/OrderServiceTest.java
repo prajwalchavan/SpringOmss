@@ -15,9 +15,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.project.omss.entity.Order;
-import com.project.omss.entity.Product;
 import com.project.omss.repository.OrderJpaRepository;
-import com.project.omss.service.OrderServiceImpl;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

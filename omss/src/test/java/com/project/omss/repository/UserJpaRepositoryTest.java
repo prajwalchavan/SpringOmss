@@ -17,7 +17,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.project.omss.entity.User;
-import com.project.omss.repository.UserJpaRepository;
 
 @RunWith(SpringRunner.class)
 @AutoConfigureTestDatabase(replace= Replace.NONE)
@@ -35,11 +34,11 @@ public class UserJpaRepositoryTest {
 	{
 		User user =new User();
 		user.setFirstName("neha");
-	    user.setLastName("kadam");
+	    user.setLastName("kadaamm");
 	    user.setMailId("neha123@gmail.com");
 	    user.setMobileNo("9865741236");
 	    user.setPassword("Neh@1234");
-	    user.setAddress("kalyan");
+	    user.setAddress("dombivali");
 	    
 		User savedInDb=entityManager.persist(user);
 		User getFromDb=userJpaRepository.findByUserId(savedInDb.getUserId());
