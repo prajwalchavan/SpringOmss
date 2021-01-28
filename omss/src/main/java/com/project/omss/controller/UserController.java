@@ -9,12 +9,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.project.omss.entity.User;
 import com.project.omss.exception.USERException;
 import com.project.omss.service.UserService;
@@ -25,6 +27,7 @@ import com.project.omss.service.UserService;
  * @author Prajwal
  *
  */
+@CrossOrigin("*")
 @RestController
 public class UserController {
 	/**
@@ -64,7 +67,8 @@ public class UserController {
 			if (user.getFirstName() != null && user.getLastName() != null && user.getAddress() != null
 					&& user.getMailId() != null && user.getPassword() != null || user.getMobileNo() != null) {
 				logger.info("User Added sucessfully");
-				return user.getUserId() + " " + userService.saveOrUpdate(user) + "\n" + "(/GetUserFunctions)";
+//				return user.getUserId() + " " + userService.saveOrUpdate(user) + "\n" + "(/GetUserFunctions)";
+				return userService.saveOrUpdate(user);
 			} else {
 				logger.error("Exception Occured!!! USER field has incorrect data");
 				throw new USERException(
@@ -85,13 +89,13 @@ public class UserController {
 	 */
 
 	@PostMapping("/User/login")
-	public ResponseEntity<User> loginUser(@RequestParam("userId") int userId,
+	public ResponseEntity<?> loginUser(@RequestParam("userId") int userId,
 			@RequestParam("password") String password) {
 		logger.info("User Login Method Started!");
 		final User user = userService.loginUser(userId, password);
 		if (user != null) {
 			logger.info("User Logged in");
-			return new ResponseEntity("Login Successfull!!! \n /GetUserFunctions)", HttpStatus.OK);
+			return ResponseEntity.accepted().body(user);
 		}
 		logger.error("User Login Failed");
 		return new ResponseEntity("Login Failed!!!", HttpStatus.BAD_REQUEST);
@@ -109,6 +113,11 @@ public class UserController {
 		logger.info("Users Retrived");
 		return userService.getAllUsers();
 	}
+	
+//	@GetMapping(value = "/Admin/getAllUsers")
+//	public ResponseEntity<User> getAllTrainee() {
+//		return new ResponseEntity<User>(HttpStatus.OK);
+//	}
 
 	/**
 	 * This method is used to get user by user ID.

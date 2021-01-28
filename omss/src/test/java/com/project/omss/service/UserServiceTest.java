@@ -6,7 +6,6 @@ import static org.junit.Assert.assertNotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Ignore;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -29,7 +28,6 @@ public class UserServiceTest {
 	@MockBean
 	private UserJpaRepository userRepo;
 	
-	@Ignore
 	@Test
 	public void testSaveAndUpdateUser() 
 	{

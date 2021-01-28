@@ -7,8 +7,9 @@ import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,7 +23,7 @@ import com.project.omss.service.OrderServiceImpl;
  * @author Prajwal
  *
  */
-
+@CrossOrigin("*")
 @RestController
 public class OrderController {
 
@@ -42,7 +43,7 @@ public class OrderController {
 	 * @throws Exception if details to place order are wrong.
 	 */
 
-	@RequestMapping("/User/PlaceOrder")
+	@PostMapping("/User/PlaceOrder")
 	public Order placeOrder(@Valid @RequestParam int userId, @Valid @RequestParam String deliveryAddress,
 			@Valid @RequestParam boolean payment) throws Exception {
 		if (userId > 0 && deliveryAddress != null && deliveryAddress != "") {
@@ -63,7 +64,7 @@ public class OrderController {
 	 */
 
 	@GetMapping("/User/ViewMyOrders")
-	public Order vewMyOrder(@RequestParam("userId") int userId) throws Exception {
+	public List<Order> vewMyOrder(@RequestParam("userId") int userId) throws Exception {
 		if (userId > 0) {
 			logger.info("Order fetched for given User ID");
 			return orderService.getOrderByUserId(userId);

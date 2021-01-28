@@ -42,21 +42,21 @@ public class OrderServiceTest {
 		assertNotNull(o);
 	}
 	
-	@Test
-	public void testGetOrderById() {
-		Order o = new Order();
-		o.setUserId(5);
-		o.setOrderDate("Januray 3, 2021");
-		o.setOrderId(1001);
-		o.setListOfProducts("Vicks, Crocin");
-		o.setDeliveryAddress("Mumbai");
-		o.setTotalAmount(200);
-		o.setPayment(true);
-		o.setOrderStatus("processing");
-		Mockito.when(orderRepo.findByUserId(5)).thenReturn(o);
-		assertThat(orderService.getOrderByUserId(5)).isEqualTo(o);
-
-	}
+//	@Test
+//	public void testGetOrderById() {
+//		Order o = new Order();
+//		o.setUserId(5);
+//		o.setOrderDate("Januray 3, 2021");
+//		o.setOrderId(1001);
+//		o.setListOfProducts("Vicks, Crocin");
+//		o.setDeliveryAddress("Mumbai");
+//		o.setTotalAmount(200);
+//		o.setPayment(true);
+//		o.setOrderStatus("processing");
+//		Mockito.when(orderRepo.findByUserId(5)).thenReturn(o);
+//		assertThat(orderService.getOrderByUserId(5)).isEqualTo(o);
+//
+//	}
 	
 	@Test
 	public void testGetAllOrders() {

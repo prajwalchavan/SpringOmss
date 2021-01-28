@@ -75,7 +75,7 @@ public class OrderServiceImpl implements OrderService {
 	 * @return Oder details of given User ID.
 	 */
 
-	public Order getOrderByUserId(int userId) {
+	public List<Order> getOrderByUserId(int userId) {
 		logger.info("get order by user ID method called");
 		return orderRepository.findByUserId(userId);
 	}
